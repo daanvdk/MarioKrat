@@ -20,6 +20,7 @@ services:
     environment:
       - MK_DEBUG=False
       - MK_SECRET=${SECRET}
+      - WB_TOKEN=${WB_TOKEN}
     restart: always
 
   web:

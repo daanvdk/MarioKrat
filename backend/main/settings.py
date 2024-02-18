@@ -34,12 +34,14 @@ DEBUG = parse_bool(os.environ['MK_DEBUG'])
 
 ALLOWED_HOSTS = ['*']
 
+WISPO_BINGO_TOKEN = os.environ['WB_TOKEN']
 
 # Application definition
 
 INSTALLED_APPS = [
     'channels',
     'mariokrat',
+    'wispo_bingo',
     'django.contrib.contenttypes',
 ]
 

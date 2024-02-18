@@ -18,6 +18,8 @@ services:
     environment:
       - MK_DEBUG=True
       - MK_SECRET=${SECRET:-dev}
+      - WB_TOKEN=${WB_TOKEN:-dev}
+      - PYTHONUNBUFFERED=1
 
   frontend:
     stdin_open: true
