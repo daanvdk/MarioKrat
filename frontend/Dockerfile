@@ -1,10 +1,10 @@
-FROM node:16.3
+FROM node:23
 
 RUN mkdir app
 WORKDIR app
 
-COPY package.json .
-RUN yarn && yarn cache clean
+COPY package.json package-lock.json .
+RUN --mount=type=cache,target=/root/.npm npm ci
 
 COPY src src
 COPY public public

@@ -1,11 +1,11 @@
 # Node
-FROM node:16.3 AS builder
+FROM node:23 AS builder
 
 RUN mkdir app
 WORKDIR app
 
-COPY frontend/package.json .
-RUN yarn && yarn cache clean
+COPY frontend/package.json frontend/package-lock.json .
+RUN --mount=type=cache,target=/root/.npm npm ci
 
 COPY frontend/src src
 COPY frontend/public public
